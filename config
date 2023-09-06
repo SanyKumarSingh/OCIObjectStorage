@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaajqbdfzwvhjlparvhb6en6odklomewmp46ikzg3okb53htz55nlxa
+fingerprint=b1:04:cb:da:61:81:31:32:6d:4e:d1:ee:fc:4b:e5:4a
+tenancy=ocid1.tenancy.oc1..aaaaaaaanmey77kpzhv2glqt45yvxxhn2uzqfsvakreckzhwrwxpzzh7tbca
+region=eu-frankfurt-1
+key_file=sany.singh.xm_private.pem
