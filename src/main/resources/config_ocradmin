@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaakcq2uu6ermucnu4cx34yre2cs7tqittajmmawtdrqmswk6spgzia
+fingerprint=7b:21:73:f3:f2:5c:6e:e9:b4:cc:49:43:d3:e2:a1:d2
+tenancy=ocid1.tenancy.oc1..aaaaaaaanmey77kpzhv2glqt45yvxxhn2uzqfsvakreckzhwrwxpzzh7tbca
+region=eu-frankfurt-1
+key_file=SVC_OCRADMIN_private.pem

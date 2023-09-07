@@ -10,9 +10,9 @@ import com.oracle.bmc.objectstorage.ObjectStorageClient;
 @Configuration
 public class OCIClientConfiguration {
     
-        // Path to OCI config file
-        String configurationFilePath = "config";
-        String profile = "DEFAULT";
+    // Path to OCI config file
+    String configurationFilePath = "./src/main/resources/config";
+    String profile = "DEFAULT";
 
     
     public ObjectStorage getObjectStorage() throws IOException{

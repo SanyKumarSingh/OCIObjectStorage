@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import com.oracle.bmc.objectstorage.model.CreatePreauthenticatedRequestDetails;
@@ -17,10 +18,11 @@ import com.oracle.bmc.objectstorage.responses.CreatePreauthenticatedRequestRespo
 @Service
 public class FileUploadService {    
 
-    String bucketName = "oef_stdf_archive_dev";
+	@Value("${oci.objectstorage.bucket-name}")
+    private String bucketName;
 
-    /*  you can find namespace in your bucket details page under Bucket information in OCI console */
-    String namespaceName = "frvakvxpiiu9";
+	@Value("${oci.objectstorage.namespaceName}")
+    private String namespaceName;
     
     @Autowired
     private OCIClientConfiguration configuration;

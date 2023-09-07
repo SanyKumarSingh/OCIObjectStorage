@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping
 public class OCIController {
 	
-	private final String urlPrefix = "https://objectstorage.eu-frankfurt-1.oraclecloud.com"; 
+	private final String urlPrefix = "https://console.eu-frankfurt-1.oraclecloud.com/object-storage/buckets/"; 
     
     @Autowired
     private FileUploadService fileUploadService;
@@ -27,8 +27,6 @@ public class OCIController {
 
         try {
             fileUploadService.upload(file);
-            //String accessUri = fileUploadService.getFileObject(file.getOriginalFilename()).getPreauthenticatedRequest().getAccessUri();
-            //return ResponseEntity.ok().body(urlPrefix+accessUri);
             return ResponseEntity.ok().body("Uploaded File : "+file.getOriginalFilename());
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,9 +39,8 @@ public class OCIController {
 
         try {
            String accessUri = fileUploadService.getFileObject(fileName).getPreauthenticatedRequest().getAccessUri();
-            return ResponseEntity.ok().body(urlPrefix+accessUri);
+            return ResponseEntity.ok().body(urlPrefix + accessUri);
         } catch (Exception e) {
-            // TODO: handle exception
             return ResponseEntity.internalServerError().build();
         }
 
@@ -54,8 +51,6 @@ public class OCIController {
 
         try {
         	fileDownloadService.downloadObject(objectName);
-            //String accessUri = fileUploadService.getFileObject(file.getOriginalFilename()).getPreauthenticatedRequest().getAccessUri();
-            //return ResponseEntity.ok().body(urlPrefix+accessUri);
             return ResponseEntity.ok().body("Downloaded File : "+objectName);
         } catch (Exception e) {
             e.printStackTrace();
